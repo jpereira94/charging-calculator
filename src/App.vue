@@ -16,9 +16,17 @@
         </div>
         <div class="column">
           <div class="field">
-            <label class="label">KWH</label>
+            <label class="label">kWh</label>
             <div class="control">
               <input class="input" type="number" v-model="kwh" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <label class="label">Velocidade</label>
+            <div class="control">
+              <input class="input" type="number" v-model="velocidade" />
             </div>
           </div>
         </div>
@@ -41,10 +49,37 @@
         </div>
       </div>
 
-      <h1 class="title">Componentes fixas</h1>
-
       <table class="table is-fullwidth is-bordered">
-        <tr>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Quant</th>
+            <th>Val. Unit.</th>
+            <th>Sub Total</th>
+          </tr>
+        </thead>
+        <tr v-for="(linha, idx) in linhas" :key="idx">
+          <td>
+            {{ linha.nome }}
+          </td>
+
+          <td>
+            {{ linha.quant }}
+          </td>
+          <td>
+            {{ linha.valor | euro }}
+          </td>
+          <td>
+            {{ (linha.quant * linha.valor) | euro }}
+          </td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total</td>
+            <td>{{ total | euro(2) }}</td>
+          </tr>
+        </tfoot>
+        <!-- <tr>
           <td>kWh</td>
           <td>Tempo</td>
           <td>OPC Ativação</td>
@@ -57,7 +92,7 @@
           <td>{{ valorOPC.charge }}</td>
           <td>{{ valorOPC.kWh }}</td>
           <td>{{ valorOPC.min }}</td>
-        </tr>
+        </tr> -->
       </table>
       <pre>{{ cemes }}</pre>
     </div>
@@ -70,18 +105,22 @@ import _ from 'lodash';
 
 export default {
   name: 'App',
+  filters: {
+    euro: (value, precision = 3) => '€ ' + _.round(value, precision),
+  },
 
   data: () => ({
     tarifas: [],
     kwh: null,
     horas: null,
     minutos: null,
-    posto: 'MTS-00043',
-
+    posto: 'FAR-00025',
+    velocidade: null,
     cemes: [
       {
         id: 'prio-electric',
         name: 'PRIO ELECTRIC',
+        mode: 'steps',
         steps: [
           { min: 0, max: 3.8, unit: 'min', vazio: 0.011, fora_vazio: 0.012 },
           { min: 3.8, max: 7.5, unit: 'min', vazio: 0.022, fora_vazio: 0.024 },
@@ -97,10 +136,48 @@ export default {
   }),
   computed: {
     tempo() {
-      return parseInt(this.horas || 0 * 60) + parseInt(this.minutos || 0);
+      return parseInt(this.horas || 0) * 60 + parseInt(this.minutos || 0);
     },
     valorOPC() {
-      return _.get(this.tarifas, this.posto, { charge: 0, kWh: 0, min: 0 });
+      return _.get(this.tarifas, this.posto, { charge: 0, kwh: 0, min: 0 });
+    },
+    linhas() {
+      // const cemeMinValue = this.cemes[0];
+      return [
+        {
+          nome: 'Ativação OPC',
+          quant: 1,
+          valor: this.valorOPC.charge,
+        },
+        {
+          nome: 'Ativação CEME',
+          quant: 1,
+          valor: 0,
+        },
+        {
+          nome: 'Taxa Min OPC',
+          quant: this.tempo,
+          valor: this.valorOPC.min,
+        },
+        {
+          nome: 'Taxa Min CEME',
+          quant: this.tempo,
+          valor: 0,
+        },
+        {
+          nome: 'Taxa Energia OPC',
+          quant: this.kwh,
+          valor: this.valorOPC.kwh,
+        },
+        {
+          nome: 'Taxa Energia CEME',
+          quant: this.kwh,
+          valor: 0,
+        },
+      ];
+    },
+    total() {
+      return _.sumBy(this.linhas, (l) => l.quant * l.valor);
     },
   },
   async mounted() {
@@ -113,41 +190,13 @@ export default {
         const keys = _.chain(results.data).map('ChargingStation').uniq().value();
         this.tarifas = _.zipObject(
           keys,
-          _.map(keys, () => ({ charge: 0, kWh: 0, min: 0 }))
+          _.map(keys, () => ({ charge: 0, kwh: 0, min: 0 }))
         );
         _.forEach(results.data, (posto) => {
           this.$set(this.tarifas[posto.ChargingStation], posto.Unit, posto.Value);
         });
       },
     });
-
-    // {
-    //   "ChargingStation": "ABF-00008",
-    //   "Unit": "charge",
-    //   "Value": "0.297",
-    //   "MinLevelValue": "0",
-    //   "MaxLevelValue": "NA",
-    //   "StartHour": "NA",
-    //   "EndHour": "NA"
-    // },
-    // {
-    //   "ChargingStation": "ABF-00008",
-    //   "Unit": "kWh",
-    //   "Value": "0.06",
-    //   "MinLevelValue": "0",
-    //   "MaxLevelValue": "NA",
-    //   "StartHour": "NA",
-    //   "EndHour": "NA"
-    // },
-    // {
-    //   "ChargingStation": "ABF-00008",
-    //   "Unit": "min",
-    //   "Value": "0.01",
-    //   "MinLevelValue": "0",
-    //   "MaxLevelValue": "NA",
-    //   "StartHour": "NA",
-    //   "EndHour": "NA"
-    // }
   },
 };
 </script>
