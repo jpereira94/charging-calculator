@@ -1,38 +1,66 @@
 <template>
   <div id="app">
     <div class="container is-max-desktop">
-      <div class="field">
-        <label for="" class="label">Posto</label>
-        <div class="control">
-          <div class="select">
-            <select v-model="posto">
-              <option v-for="(posto, key) in tarifas" :key="key" :value="key">{{ key }}</option>
-            </select>
+      <div class="columns pt-3">
+        <div class="column">
+          <div class="field">
+            <label for="" class="label">Posto</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select v-model="posto">
+                  <option v-for="(posto, key) in tarifas" :key="key" :value="key">{{ key }}</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="field">
-        <label class="label">KWH</label>
-        <div class="control">
-          <input class="input" type="number" v-model="kwh" />
+        <div class="column">
+          <div class="field">
+            <label class="label">KWH</label>
+            <div class="control">
+              <input class="input" type="number" v-model="kwh" />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Tempo</label>
-        <div class="control">
-          <div class="columns">
-            <div class="column">
+        <div class="column">
+          <div class="field">
+            <label class="label">Tempo</label>
+            <div class="control">
               <input class="input" placeholder="Horas" type="number" v-model="horas" />
             </div>
-            <div class="column">
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">&nbsp;</label>
+            <div class="control">
               <input class="input" placeholder="Minutos" type="number" v-model="minutos" />
             </div>
           </div>
         </div>
       </div>
+
+      <h1 class="title">Componentes fixas</h1>
+
+      <table class="table is-fullwidth is-bordered">
+        <tr>
+          <td>kWh</td>
+          <td>Tempo</td>
+          <td>OPC Ativação</td>
+          <td>OPC €/kWh</td>
+          <td>OPC €/min</td>
+        </tr>
+        <tr>
+          <td>{{ kwh }}</td>
+          <td>{{ tempo }} min</td>
+          <td>{{ valorOPC.charge }}</td>
+          <td>{{ valorOPC.kWh }}</td>
+          <td>{{ valorOPC.min }}</td>
+        </tr>
+      </table>
+      <pre>{{ cemes }}</pre>
     </div>
-    <pre>{{ tempo }}</pre>
   </div>
 </template>
 
@@ -48,11 +76,31 @@ export default {
     kwh: null,
     horas: null,
     minutos: null,
-    posto: null,
+    posto: 'MTS-00043',
+
+    cemes: [
+      {
+        id: 'prio-electric',
+        name: 'PRIO ELECTRIC',
+        steps: [
+          { min: 0, max: 3.8, unit: 'min', vazio: 0.011, fora_vazio: 0.012 },
+          { min: 3.8, max: 7.5, unit: 'min', vazio: 0.022, fora_vazio: 0.024 },
+          { min: 7.5, max: 11.2, unit: 'min', vazio: 0.0327, fora_vazio: 0.0357 },
+          { min: 11.2, max: 22.2, unit: 'min', vazio: 0.0653, fora_vazio: 0.0715 },
+          { min: 22.2, max: 50.1, unit: 'min', vazio: 0.1336, fora_vazio: 0.1462 },
+          { min: 50.1, max: 100, unit: 'min', vazio: 0.2672, fora_vazio: 0.2925 },
+          { min: 100.1, max: 150, unit: 'min', vazio: 0.386, fora_vazio: 0.4224 },
+          { min: 150.1, max: 360, unit: 'min', vazio: 0.386, fora_vazio: 0.4224 },
+        ],
+      },
+    ],
   }),
   computed: {
     tempo() {
       return parseInt(this.horas || 0 * 60) + parseInt(this.minutos || 0);
+    },
+    valorOPC() {
+      return _.get(this.tarifas, this.posto, { charge: 0, kWh: 0, min: 0 });
     },
   },
   async mounted() {
@@ -104,6 +152,11 @@ export default {
 };
 </script>
 
-<style>
-@import url('../node_modules/bulma/css/bulma.min.css');
+<style lang="scss">
+@import '../node_modules/bulma/sass/utilities/initial-variables.sass';
+
+@import '../node_modules/bulma/bulma.sass';
+// #app {
+//   color: $color;
+// }
 </style>
