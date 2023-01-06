@@ -51,9 +51,30 @@
           </div>
         </div>
 
-        <pre>{{ ceme }}</pre>
-        <pre>{{ posto }}</pre>
         <h1 class="title">TOTAIS</h1>
+        <div class="columns is-justify-content-space-between">
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <div class="title">{{ total | euro(2) }}</div>
+              <div class="subtitle">Total</div>
+            </div>
+          </div>
+
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <div class="title">{{ (total / kwh) | euro(4) }}</div>
+              <div class="subtitle">€/kwh</div>
+            </div>
+          </div>
+
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <div class="title">{{ (total / tempo) | euro(4) }}</div>
+              <div class="subtitle">€/min</div>
+            </div>
+          </div>
+        </div>
+
         <table class="table is-fullwidth is-bordered">
           <thead>
             <tr>
@@ -90,9 +111,6 @@
             </tr>
           </tfoot>
         </table>
-
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi a est deserunt! Non quidem incidunt aspernatur
-        quisquam, possimus id eius aperiam veritatis quae suscipit a inventore magni, deserunt rerum! Consequatur.
       </div>
     </section>
   </div>
