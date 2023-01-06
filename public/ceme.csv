@@ -1,0 +1,4 @@
+nome;inclui_tar;activacao;unid;vazio;fora_vazio;min;max
+viaverde | ecochoice;false;0.0706;kwh;0.1616;0.1616;0;
+galp;true;0.0706;kwh;0.1913;0.2202;0;
+edp uve (22% desconto);true;0.0706;kwh;0.2152;0.2152;0;
