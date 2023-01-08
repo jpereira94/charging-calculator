@@ -112,6 +112,10 @@
           </tfoot>
         </table>
       </div>
+
+      <div class="container">
+        <pre>{{ postosFiltrados }}</pre>
+      </div>
     </section>
   </div>
 </template>
@@ -126,6 +130,12 @@ export default {
     euro: (value, precision = 4) => '€ ' + _.round(value, precision).toFixed(precision),
   },
   computed: {
+    postosFiltrados() {
+      return _.sortBy(
+        this.postos.filter((p) => p.nome?.includes('FAR')),
+        [(p) => _.find(p.parcelas, { Unit: 'min' })?.Value]
+      );
+    },
     linhas() {
       const linhas = [];
       if (this.ceme) {
