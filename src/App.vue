@@ -314,59 +314,59 @@ export default {
       },
     });
 
-    //     try {
-    //       const headers = {
-    //         'x-client-id': '63bbfae42aba7df61a0f8070',
-    //         'x-app-id': '63bbfae42aba7df61a0f8072',
-    //       };
+    try {
+      const headers = {
+        'x-client-id': '63bbfae42aba7df61a0f8070',
+        'x-app-id': '63bbfae42aba7df61a0f8072',
+      };
 
-    //       const client = createClient({
-    //         url: 'https://api.chargetrip.io/graphql',
-    //         fetchOptions: {
-    //           method: 'POST',
-    //           headers,
-    //         },
-    //         exchanges: [...defaultExchanges],
-    //       });
+      const client = createClient({
+        url: 'https://api.chargetrip.io/graphql',
+        fetchOptions: {
+          method: 'POST',
+          headers,
+        },
+        exchanges: [...defaultExchanges],
+      });
 
-    //       console.log(client);
+      console.log(client);
 
-    //       client
-    //         .query(
-    //           `query vehicleListAll {
-    //   vehicleList (page: 1, size:50, search: "tesla") {
-    //     id
-    //     naming {
-    //       make
-    //       model
-    //       version
-    //       edition
-    //       chargetrip_version
-    //     }
-    //     connectors {
-    //       standard
-    //       power
-    //       max_electric_power
-    //       time
-    //       speed
-    //     }
-    //     battery {
-    //       usable_kwh
-    //       full_kwh
-    //     }
-    //   }
-    // }
+      client
+        .query(
+          `query vehicleListAll {
+  vehicleList (page: 1, size:50, search: "tesla model 3") {
+    id
+    naming {
+      make
+      model
+      version
+      edition
+      chargetrip_version
+    }
+    connectors {
+      standard
+      power
+      max_electric_power
+      time
+      speed
+    }
+    battery {
+      usable_kwh
+      full_kwh
+    }
+  }
+}
 
-    // `
-    //         )
-    //         .toPromise()
-    //         .then((result) => {
-    //           console.log(result); // { data: ... }
-    //           this.carros = result.data;
-    //         });
-    //     } catch (error) {
-    //       console.warn(error);
-    //     }
+`
+        )
+        .toPromise()
+        .then((result) => {
+          console.log(result); // { data: ... }
+          this.carros = result.data;
+        });
+    } catch (error) {
+      console.warn(error);
+    }
   },
   methods: {
     validarTempo() {
