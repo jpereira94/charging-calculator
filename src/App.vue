@@ -114,7 +114,7 @@
       </div>
 
       <div class="container">
-        <pre>{{ postosFiltrados }}</pre>
+        <pre>{{ carros }}</pre>
       </div>
     </section>
   </div>
@@ -123,6 +123,8 @@
 <script>
 import Papa from 'papaparse';
 import _ from 'lodash';
+
+import { createClient, defaultExchanges } from '@urql/core';
 
 export default {
   name: 'App',
@@ -275,6 +277,7 @@ export default {
         },
       ],
     },
+    carros: [],
   }),
   async mounted() {
     Papa.parse('https://www.mobie.pt/documents/42032/106470/Tarifas', {
@@ -310,6 +313,60 @@ export default {
         this.cemes = results.data;
       },
     });
+
+    //     try {
+    //       const headers = {
+    //         'x-client-id': '63bbfae42aba7df61a0f8070',
+    //         'x-app-id': '63bbfae42aba7df61a0f8072',
+    //       };
+
+    //       const client = createClient({
+    //         url: 'https://api.chargetrip.io/graphql',
+    //         fetchOptions: {
+    //           method: 'POST',
+    //           headers,
+    //         },
+    //         exchanges: [...defaultExchanges],
+    //       });
+
+    //       console.log(client);
+
+    //       client
+    //         .query(
+    //           `query vehicleListAll {
+    //   vehicleList (page: 1, size:50, search: "tesla") {
+    //     id
+    //     naming {
+    //       make
+    //       model
+    //       version
+    //       edition
+    //       chargetrip_version
+    //     }
+    //     connectors {
+    //       standard
+    //       power
+    //       max_electric_power
+    //       time
+    //       speed
+    //     }
+    //     battery {
+    //       usable_kwh
+    //       full_kwh
+    //     }
+    //   }
+    // }
+
+    // `
+    //         )
+    //         .toPromise()
+    //         .then((result) => {
+    //           console.log(result); // { data: ... }
+    //           this.carros = result.data;
+    //         });
+    //     } catch (error) {
+    //       console.warn(error);
+    //     }
   },
   methods: {
     validarTempo() {
