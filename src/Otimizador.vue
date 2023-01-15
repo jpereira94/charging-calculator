@@ -17,6 +17,7 @@
         <tr>
           <th>ID</th>
           <th>standard</th>
+          <th>address</th>
           <th class="has-text-centered">max_electric_power</th>
           <th>Voltage</th>
           <th>time</th>
@@ -30,6 +31,12 @@
         <tr v-for="row in timeToChargePerPost" :key="row.evse_id">
           <td>{{ row.evse_id }}</td>
           <td>{{ row.evses.connectors.standard }}</td>
+          <td>
+            <a :href="row.gmaps" target="_blank">{{ row.address }}</a>
+          </td>
+
+          <!-- https://maps.google.com/?q=<lat>,<lng> -->
+          <!-- https://www.google.com/maps/search/?api=1&query=<lat>,<lng> -->
           <td class="has-text-centered">{{ row.evses.connectors.max_electric_power / 1000 }}</td>
           <td>{{ row.mobie_voltage_level }}</td>
           <td>{{ row.time_to_charge_minutes | displayTime }}</td>
@@ -101,6 +108,7 @@ export default {
             minute_cost,
             energy_cost,
             total_cost: charge_cost + minute_cost + energy_cost,
+            gmaps: `https://maps.google.com/?q=${p.coordinates.latitude},${p.coordinates.longitude}`,
           };
         })
         .sortBy('total_cost')
