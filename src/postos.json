@@ -1,0 +1,1514 @@
+[
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-00009",
+    "publish": true,
+    "address": "Praça da Liberdade",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-077",
+    "coordinates": { "latitude": "37.016829", "longitude": "-7.929511" },
+    "parking_type": "PARKING_GARAGE",
+    "evses": [
+      {
+        "uid": "FAR-00009-01",
+        "evse_id": "PT*EDP*E*FAR*00009*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00009-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-02-22T19:14:06.423Z"
+          }
+        ],
+        "last_updated": "2023-01-14T12:51:02.947Z"
+      },
+      {
+        "uid": "FAR-00009-02",
+        "evse_id": "PT*EDP*E*FAR*00009*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00009-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-02-22T19:14:06.423Z"
+          }
+        ],
+        "last_updated": "2023-01-14T12:59:34.205Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-14T12:59:34.205Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "KLC",
+    "id": "FAR-00010",
+    "publish": true,
+    "address": "Avenida Calouste Gulbenkian",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-072",
+    "coordinates": { "latitude": "37.0272657", "longitude": "-7.9329484" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00010-02",
+        "evse_id": "PT*KLC*E*FAR*00010*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00010-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-02-16T10:58:59.248Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:59:47.57Z"
+      },
+      {
+        "uid": "FAR-00010-01",
+        "evse_id": "PT*KLC*E*FAR*00010*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00010-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-02-16T10:58:59.246Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:59:47.207Z"
+      },
+      {
+        "uid": "FAR-00010-03",
+        "evse_id": "PT*KLC*E*FAR*00010*03",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-00010-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 400,
+            "max_amperage": 63,
+            "max_electric_power": 43000,
+            "last_updated": "2022-02-16T10:58:59.249Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:59:48.001Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T19:59:48.001Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "REP",
+    "id": "FAR-00011",
+    "publish": true,
+    "address": "Avenida Dr. Júlio Filipe Almeida Carrapato",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-081",
+    "coordinates": { "latitude": "37.01999", "longitude": "-7.923567" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00011-03",
+        "evse_id": "PT*REP*E*FAR*00011*03",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00011-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 63,
+            "max_electric_power": 22000,
+            "last_updated": "2022-12-31T22:23:34.351Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:40.559Z"
+      },
+      {
+        "uid": "FAR-00011-02",
+        "evse_id": "PT*REP*E*FAR*00011*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00011-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-12-31T22:23:34.349Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:30.108Z"
+      },
+      {
+        "uid": "FAR-00011-01",
+        "evse_id": "PT*REP*E*FAR*00011*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00011-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-12-31T22:23:34.348Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:19.735Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTE",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T15:01:40.559Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "MOT",
+    "id": "FAR-00012",
+    "publish": true,
+    "address": "EN 125, km 103",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8009-020",
+    "coordinates": { "latitude": "37.02958", "longitude": "-7.94494" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00012-02",
+        "evse_id": "PT*MOT*E*FAR*00012*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00012-02-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 60,
+            "max_electric_power": 24000,
+            "last_updated": "2023-01-05T14:50:54.441Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:10.923Z"
+      },
+      {
+        "uid": "FAR-00012-01",
+        "evse_id": "PT*MOT*E*FAR*00012*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00012-01-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 920,
+            "max_amperage": 60,
+            "max_electric_power": 24000,
+            "last_updated": "2023-01-05T14:50:54.44Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:24:26.165Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:24:26.165Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "MOT",
+    "id": "FAR-00013",
+    "publish": true,
+    "address": "EN 125, km 103",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8009-020",
+    "coordinates": { "latitude": "37.02908", "longitude": "-7.94494" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00013-02",
+        "evse_id": "PT*MOT*E*FAR*00013*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00013-02-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 60,
+            "max_electric_power": 24000,
+            "last_updated": "2023-01-05T14:51:09.845Z"
+          }
+        ],
+        "last_updated": "2023-01-14T17:44:03.088Z"
+      },
+      {
+        "uid": "FAR-00013-01",
+        "evse_id": "PT*MOT*E*FAR*00013*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00013-01-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 920,
+            "max_amperage": 60,
+            "max_electric_power": 24000,
+            "last_updated": "2023-01-05T14:51:09.841Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:45:01.385Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T19:45:01.385Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "MOT",
+    "id": "FAR-00014",
+    "publish": true,
+    "address": "EN 125, km 103",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8009-020",
+    "coordinates": { "latitude": "37.02958", "longitude": "-7.94444" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00014-1",
+        "evse_id": "PT*MOT*E*FAR*00014*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00014-1-1",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 16,
+            "max_electric_power": 11000,
+            "last_updated": "2023-01-05T14:51:23.982Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:46.874Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T15:01:46.874Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "MOT",
+    "id": "FAR-00019",
+    "publish": true,
+    "address": "Parque de Estacionamento do Fórum Algarve ",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8009-020",
+    "coordinates": { "latitude": "37.027809", "longitude": "-7.944625" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00019-02",
+        "evse_id": "PT*MOT*E*FAR*00019*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00019-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2023-01-05T14:51:37.288Z"
+          }
+        ],
+        "last_updated": "2023-01-15T18:36:58.696Z"
+      },
+      {
+        "uid": "FAR-00019-01",
+        "evse_id": "PT*MOT*E*FAR*00019*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00019-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2023-01-05T14:51:37.287Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:49:11.935Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T19:49:11.935Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-00021",
+    "publish": true,
+    "address": "Av. Cidade Hayward",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000",
+    "coordinates": { "latitude": "37.025509", "longitude": "-7.91758" },
+    "parking_type": "ALONG_MOTORWAY",
+    "evses": [
+      {
+        "uid": "FAR-00021-01",
+        "evse_id": "PT*EDP*E*FAR*00021*01",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-00021-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-06-30T09:23:38.117Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:15:19.064Z"
+      },
+      {
+        "uid": "FAR-00021-02",
+        "evse_id": "PT*EDP*E*FAR*00021*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00021-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-06-30T09:23:38.118Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:15:19.513Z"
+      },
+      {
+        "uid": "FAR-00021-03",
+        "evse_id": "PT*EDP*E*FAR*00021*03",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00021-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 63,
+            "max_electric_power": 43000,
+            "last_updated": "2022-06-30T09:23:38.118Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:15:19.944Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTE",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:15:19.944Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-00022",
+    "publish": true,
+    "address": "Hotel Pestana Estói",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-465",
+    "coordinates": { "latitude": "37.096835", "longitude": "-7.895323" },
+    "parking_type": "PARKING_GARAGE",
+    "evses": [
+      {
+        "uid": "FAR-00022-1",
+        "evse_id": "PT*EDP*E*FAR*00022*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00022-1-1",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 32,
+            "max_electric_power": 7400,
+            "last_updated": "2022-04-22T16:18:57.465Z"
+          }
+        ],
+        "last_updated": "2023-01-15T16:51:42.519Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": true,
+    "last_updated": "2023-01-15T16:51:42.49Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-00023",
+    "publish": true,
+    "address": "Hotel Pestana Estói",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-465",
+    "coordinates": { "latitude": "37.096835", "longitude": "-7.895323" },
+    "parking_type": "PARKING_GARAGE",
+    "evses": [
+      {
+        "uid": "FAR-00023-1",
+        "evse_id": "PT*EDP*E*FAR*00023*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00023-1-1",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 32,
+            "max_electric_power": 7400,
+            "last_updated": "2022-04-22T16:18:55.83Z"
+          }
+        ],
+        "last_updated": "2023-01-15T17:30:06.515Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": true,
+    "last_updated": "2023-01-15T17:30:06.482Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "PRI",
+    "id": "FAR-00024",
+    "publish": true,
+    "address": "Via Colectora da EN125-10",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-510",
+    "coordinates": { "latitude": "37.0371001", "longitude": "-7.957042" },
+    "parking_type": "ALONG_MOTORWAY",
+    "evses": [
+      {
+        "uid": "FAR-00024-2",
+        "evse_id": "PT*PRI*E*FAR*00024*2",
+        "status": "UNKNOWN",
+        "connectors": [
+          {
+            "id": "FAR-00024-2-1",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-02-03T17:55:56.618Z"
+          }
+        ],
+        "last_updated": "2022-12-15T11:25:17.916Z"
+      },
+      {
+        "uid": "FAR-00024-1",
+        "evse_id": "PT*PRI*E*FAR*00024*1",
+        "status": "UNKNOWN",
+        "connectors": [
+          {
+            "id": "FAR-00024-1-1",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "DC",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-02-03T17:55:56.617Z"
+          }
+        ],
+        "last_updated": "2022-12-15T11:25:17.916Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTE",
+    "mobie_mobi_charger": false,
+    "last_updated": "2022-12-15T11:25:17.793Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "GLP",
+    "id": "FAR-00025",
+    "publish": true,
+    "address": "Makro Faro",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8004-075",
+    "coordinates": { "latitude": "37.036174", "longitude": "-7.896936" },
+    "parking_type": "PARKING_GARAGE",
+    "evses": [
+      {
+        "uid": "FAR-00025-01",
+        "evse_id": "PT*GLP*E*FAR*00025*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00025-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 32,
+            "max_electric_power": 7400,
+            "last_updated": "2023-01-13T17:09:04.907Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:27.253Z"
+      },
+      {
+        "uid": "FAR-00025-02",
+        "evse_id": "PT*GLP*E*FAR*00025*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00025-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 32,
+            "max_electric_power": 7400,
+            "last_updated": "2023-01-13T17:09:04.908Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:01:37.604Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T15:01:37.604Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "MOT",
+    "id": "FAR-00026",
+    "publish": true,
+    "address": "EN 125, km 103",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8009-020",
+    "coordinates": { "latitude": "37.02958", "longitude": "-7.94544" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00026-1",
+        "evse_id": "PT*MOT*E*FAR*00026*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00026-1-1",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 16,
+            "max_electric_power": 11000,
+            "last_updated": "2023-01-05T14:52:00.945Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:13:07.299Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T15:13:07.299Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "HRZ",
+    "id": "FAR-00028",
+    "publish": true,
+    "address": "EN125",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8365-023",
+    "coordinates": { "latitude": "37.1321077", "longitude": "-8.3596268" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00028-02",
+        "evse_id": "PT*HRZ*E*FAR*00028*02",
+        "status": "OUTOFORDER",
+        "connectors": [
+          {
+            "id": "FAR-00028-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-09-12T13:30:21.039Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:05:22.767Z"
+      },
+      {
+        "uid": "FAR-00028-01",
+        "evse_id": "PT*HRZ*E*FAR*00028*01",
+        "status": "OUTOFORDER",
+        "connectors": [
+          {
+            "id": "FAR-00028-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-09-12T13:30:21.038Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:05:22.767Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTE",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T15:05:22.726Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "KLC",
+    "id": "FAR-00030",
+    "publish": true,
+    "address": "Avenida José Maria Nunes E.N 125,",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-145",
+    "coordinates": { "latitude": "37.027106", "longitude": "-7.9506282" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00030-02",
+        "evse_id": "PT*KLC*E*FAR*00030*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00030-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 150,
+            "max_electric_power": 60000,
+            "last_updated": "2022-09-12T09:54:06.831Z"
+          }
+        ],
+        "last_updated": "2023-01-15T06:50:21.151Z"
+      },
+      {
+        "uid": "FAR-00030-03",
+        "evse_id": "PT*KLC*E*FAR*00030*03",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00030-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-09-12T09:54:06.832Z"
+          }
+        ],
+        "last_updated": "2023-01-13T19:46:57.551Z"
+      },
+      {
+        "uid": "FAR-00030-01",
+        "evse_id": "PT*KLC*E*FAR*00030*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00030-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-09-12T09:54:06.83Z"
+          }
+        ],
+        "last_updated": "2023-01-13T19:46:55.392Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T06:50:21.151Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "KLC",
+    "id": "FAR-00031",
+    "publish": true,
+    "address": "Estrada da Penha – Urb. Horta Laranjas, LT 5",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-329",
+    "coordinates": { "latitude": "37.0250753", "longitude": "-7.9271648" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00031-02",
+        "evse_id": "PT*KLC*E*FAR*00031*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00031-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 150,
+            "max_electric_power": 60000,
+            "last_updated": "2022-09-12T09:54:09.271Z"
+          }
+        ],
+        "last_updated": "2023-01-14T21:10:45.344Z"
+      },
+      {
+        "uid": "FAR-00031-03",
+        "evse_id": "PT*KLC*E*FAR*00031*03",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00031-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-09-12T09:54:09.272Z"
+          }
+        ],
+        "last_updated": "2023-01-14T21:10:45.344Z"
+      },
+      {
+        "uid": "FAR-00031-01",
+        "evse_id": "PT*KLC*E*FAR*00031*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00031-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-09-12T09:54:09.27Z"
+          }
+        ],
+        "last_updated": "2023-01-14T21:10:45.344Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "MT",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-14T21:10:45.302Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "HRZ",
+    "id": "FAR-00033",
+    "publish": true,
+    "address": "EN125",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8365-023",
+    "coordinates": { "latitude": "37.132485", "longitude": "-8.3592677" },
+    "parking_type": "PARKING_LOT",
+    "evses": [
+      {
+        "uid": "FAR-00033-04",
+        "evse_id": "PT*HRZ*E*FAR*00033*04",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00033-04-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 200,
+            "max_electric_power": 80000,
+            "last_updated": "2022-08-16T23:36:27.516Z"
+          }
+        ],
+        "last_updated": "2023-01-15T18:17:30.78Z"
+      },
+      {
+        "uid": "FAR-00033-01",
+        "evse_id": "PT*HRZ*E*FAR*00033*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00033-01-01",
+            "standard": "CHADEMO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 125,
+            "max_electric_power": 50000,
+            "last_updated": "2022-08-16T23:36:27.516Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:02:00.065Z"
+      },
+      {
+        "uid": "FAR-00033-03",
+        "evse_id": "PT*HRZ*E*FAR*00033*03",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00033-03-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 200,
+            "max_electric_power": 80000,
+            "last_updated": "2022-08-16T23:36:27.516Z"
+          }
+        ],
+        "last_updated": "2023-01-15T18:16:09.555Z"
+      },
+      {
+        "uid": "FAR-00033-02",
+        "evse_id": "PT*HRZ*E*FAR*00033*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-00033-02-01",
+            "standard": "IEC_62196_T2_COMBO",
+            "format": "CABLE",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 500,
+            "max_amperage": 200,
+            "max_electric_power": 80000,
+            "last_updated": "2022-08-16T23:36:27.516Z"
+          }
+        ],
+        "last_updated": "2023-01-15T18:50:55.09Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTE",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T18:50:55.09Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "HRZ",
+    "id": "FAR-90001",
+    "publish": true,
+    "address": "Largo de São Francisco",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-142",
+    "coordinates": { "latitude": "37.012424", "longitude": "-7.932747" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90001-2",
+        "evse_id": "PT*HRZ*E*FAR*90001*2",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90001-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:09.555Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:45:47.471Z"
+      },
+      {
+        "uid": "FAR-90001-1",
+        "evse_id": "PT*HRZ*E*FAR*90001*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90001-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:09.554Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:45:46.149Z"
+      },
+      {
+        "uid": "FAR-90001-4",
+        "evse_id": "PT*HRZ*E*FAR*90001*4",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90001-04-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:09.556Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:45:49.952Z"
+      },
+      {
+        "uid": "FAR-90001-3",
+        "evse_id": "PT*HRZ*E*FAR*90001*3",
+        "status": "OUTOFORDER",
+        "connectors": [
+          {
+            "id": "FAR-90001-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:09.555Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:45:48.49Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:45:49.952Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-90002",
+    "publish": true,
+    "address": "Avenida da República",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-078",
+    "coordinates": { "latitude": "37.016309", "longitude": "-7.935801" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90002-1",
+        "evse_id": "PT*EDP*E*FAR*90002*1",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-90002-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-06-07T19:15:28.078Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:36:37.848Z"
+      },
+      {
+        "uid": "FAR-90002-2",
+        "evse_id": "PT*EDP*E*FAR*90002*2",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90002-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-06-07T19:15:28.078Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:08:50.056Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:36:37.848Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "GLP",
+    "id": "FAR-90003",
+    "publish": true,
+    "address": "Avenida da República",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-080",
+    "coordinates": { "latitude": "37.017651", "longitude": "-7.938786" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90003-1",
+        "evse_id": "PT*GLP*E*FAR*90003*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90003-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2023-01-13T17:09:18.649Z"
+          }
+        ],
+        "last_updated": "2023-01-14T14:48:59.094Z"
+      },
+      {
+        "uid": "FAR-90003-2",
+        "evse_id": "PT*GLP*E*FAR*90003*2",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-90003-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2023-01-13T17:09:18.651Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:19:56.414Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:19:56.414Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "GLP",
+    "id": "FAR-90004",
+    "publish": true,
+    "address": "Largo Francisco Sá Carneiro",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-151",
+    "coordinates": { "latitude": "37.0197001", "longitude": "-7.928275" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90004-2",
+        "evse_id": "PT*GLP*E*FAR*90004*2",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90004-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2023-01-13T17:09:31.793Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:56:56.695Z"
+      },
+      {
+        "uid": "FAR-90004-1",
+        "evse_id": "PT*GLP*E*FAR*90004*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90004-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_3_PHASE",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2023-01-13T17:09:31.792Z"
+          }
+        ],
+        "last_updated": "2023-01-15T17:40:38.638Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T19:56:56.695Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "HRZ",
+    "id": "FAR-90005",
+    "publish": true,
+    "address": "Rua da Cidade de Bolama",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-249",
+    "coordinates": { "latitude": "37.024757", "longitude": "-7.930374" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90005-2",
+        "evse_id": "PT*HRZ*E*FAR*90005*2",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-90005-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:14.737Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:46:22.384Z"
+      },
+      {
+        "uid": "FAR-90005-1",
+        "evse_id": "PT*HRZ*E*FAR*90005*1",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-90005-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:14.737Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:48:03.845Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T21:48:03.845Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "KLC",
+    "id": "FAR-90006",
+    "publish": true,
+    "address": "Estrada da Penha",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-133",
+    "coordinates": { "latitude": "37.028896", "longitude": "-7.924731" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90006-3",
+        "evse_id": "PT*KLC*E*FAR*90006*3",
+        "status": "UNKNOWN",
+        "connectors": [
+          {
+            "id": "FAR-90006-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:18.277Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:44:09.466Z"
+      },
+      {
+        "uid": "FAR-90006-1",
+        "evse_id": "PT*KLC*E*FAR*90006*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90006-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:18.276Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:47:28.333Z"
+      },
+      {
+        "uid": "FAR-90006-4",
+        "evse_id": "PT*KLC*E*FAR*90006*4",
+        "status": "UNKNOWN",
+        "connectors": [
+          {
+            "id": "FAR-90006-04-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:18.277Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:44:09.466Z"
+      },
+      {
+        "uid": "FAR-90006-2",
+        "evse_id": "PT*KLC*E*FAR*90006*2",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90006-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-02-03T17:56:18.277Z"
+          }
+        ],
+        "last_updated": "2023-01-15T21:47:29.224Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T21:47:29.224Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "EDP",
+    "id": "FAR-90007",
+    "publish": true,
+    "address": "Rua dos Malmequeres",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8005-214",
+    "coordinates": { "latitude": "37.04289", "longitude": "-7.970567" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90007-2",
+        "evse_id": "PT*EDP*E*FAR*90007*2",
+        "status": "CHARGING",
+        "connectors": [
+          {
+            "id": "FAR-90007-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-06-07T19:15:41.229Z"
+          }
+        ],
+        "last_updated": "2023-01-15T20:43:58.915Z"
+      },
+      {
+        "uid": "FAR-90007-3",
+        "evse_id": "PT*EDP*E*FAR*90007*3",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90007-03-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-06-07T19:15:41.229Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:23:58.632Z"
+      },
+      {
+        "uid": "FAR-90007-4",
+        "evse_id": "PT*EDP*E*FAR*90007*4",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90007-04-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-06-07T19:15:41.23Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:23:59.625Z"
+      },
+      {
+        "uid": "FAR-90007-1",
+        "evse_id": "PT*EDP*E*FAR*90007*1",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90007-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "AC_1_PHASE",
+            "max_voltage": 240,
+            "max_amperage": 16,
+            "max_electric_power": 3700,
+            "last_updated": "2022-06-07T19:15:41.228Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:23:55.752Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T20:43:58.915Z"
+  },
+  {
+    "country_code": "PT",
+    "party_id": "KLC",
+    "id": "FAR-90008",
+    "publish": true,
+    "address": "Largo de S. Francisco",
+    "city": "Faro",
+    "country": "PRT",
+    "postal_code": "8000-142",
+    "coordinates": { "latitude": "37.012269", "longitude": "-7.932681" },
+    "parking_type": "ON_STREET",
+    "evses": [
+      {
+        "uid": "FAR-90008-01",
+        "evse_id": "PT*KLC*E*FAR*90008*01",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90008-01-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-02-03T17:56:19.334Z"
+          }
+        ],
+        "last_updated": "2023-01-15T19:26:44.028Z"
+      },
+      {
+        "uid": "FAR-90008-02",
+        "evse_id": "PT*KLC*E*FAR*90008*02",
+        "status": "AVAILABLE",
+        "connectors": [
+          {
+            "id": "FAR-90008-02-01",
+            "standard": "IEC_62196_T2",
+            "format": "SOCKET",
+            "power_type": "DC",
+            "max_voltage": 400,
+            "max_amperage": 32,
+            "max_electric_power": 22000,
+            "last_updated": "2022-02-03T17:56:19.335Z"
+          }
+        ],
+        "last_updated": "2023-01-15T15:02:04.265Z"
+      }
+    ],
+    "time_zone": "Europe/Lisbon",
+    "mobie_voltage_level": "BTN",
+    "mobie_mobi_charger": false,
+    "last_updated": "2023-01-15T19:26:44.028Z"
+  }
+]

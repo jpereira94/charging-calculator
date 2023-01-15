@@ -385,9 +385,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../node_modules/bulma/sass/utilities/initial-variables.sass';
-
-@import '../node_modules/bulma/bulma.sass';
 // #app {
 //   color: $color;
 // }

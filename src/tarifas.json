@@ -1,0 +1,468 @@
+{
+  "FAR-00009": [
+    {
+      "ChargingStation": "FAR-00009",
+      "Unit": "charge",
+      "Value": 0.297,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00009",
+      "Unit": "min",
+      "Value": 0.03,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00010": [
+    {
+      "ChargingStation": "FAR-00010",
+      "Unit": "min",
+      "Value": 0.08,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00011": [
+    {
+      "ChargingStation": "FAR-00011",
+      "Unit": "charge",
+      "Value": 0.261,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00011",
+      "Unit": "min",
+      "Value": 0.12,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00012": [
+    {
+      "ChargingStation": "FAR-00012",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00012",
+      "Unit": "min",
+      "Value": 0.06,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00013": [
+    {
+      "ChargingStation": "FAR-00013",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00013",
+      "Unit": "min",
+      "Value": 0.06,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00014": [
+    {
+      "ChargingStation": "FAR-00014",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00014",
+      "Unit": "min",
+      "Value": 0.025,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00019": [
+    {
+      "ChargingStation": "FAR-00019",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00019",
+      "Unit": "min",
+      "Value": 0.033,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00021": [
+    {
+      "ChargingStation": "FAR-00021",
+      "Unit": "charge",
+      "Value": 0.297,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00021",
+      "Unit": "min",
+      "Value": 0.1,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00022": [
+    {
+      "ChargingStation": "FAR-00022",
+      "Unit": "charge",
+      "Value": 0.297,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00022",
+      "Unit": "kWh",
+      "Value": 0.06,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00022",
+      "Unit": "min",
+      "Value": 0.01,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00023": [
+    {
+      "ChargingStation": "FAR-00023",
+      "Unit": "charge",
+      "Value": 0.297,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00023",
+      "Unit": "kWh",
+      "Value": 0.06,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00023",
+      "Unit": "min",
+      "Value": 0.01,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00024": [
+    {
+      "ChargingStation": "FAR-00024",
+      "Unit": "charge",
+      "Value": 0.3,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00024",
+      "Unit": "min",
+      "Value": 0.125,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00025": [
+    {
+      "ChargingStation": "FAR-00025",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00025",
+      "Unit": "min",
+      "Value": 0.019,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00026": [
+    {
+      "ChargingStation": "FAR-00026",
+      "Unit": "charge",
+      "Value": 0.2608,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00026",
+      "Unit": "min",
+      "Value": 0.025,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00028": [
+    {
+      "ChargingStation": "FAR-00028",
+      "Unit": "charge",
+      "Value": 0.3,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00028",
+      "Unit": "min",
+      "Value": 0.035,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00030": [
+    {
+      "ChargingStation": "FAR-00030",
+      "Unit": "charge",
+      "Value": 0.2964,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00030",
+      "Unit": "min",
+      "Value": 0.095,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00031": [
+    {
+      "ChargingStation": "FAR-00031",
+      "Unit": "charge",
+      "Value": 0.2964,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00031",
+      "Unit": "min",
+      "Value": 0.095,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-00033": [
+    {
+      "ChargingStation": "FAR-00033",
+      "Unit": "charge",
+      "Value": 0.3,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00033",
+      "Unit": "kWh",
+      "Value": 0.25,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00033",
+      "Unit": "min",
+      "Value": 0,
+      "MinLevelValue": 0,
+      "MaxLevelValue": 30,
+      "StartHour": "NA",
+      "EndHour": "NA"
+    },
+    {
+      "ChargingStation": "FAR-00033",
+      "Unit": "min",
+      "Value": 0.15,
+      "MinLevelValue": 30,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90001": [
+    {
+      "ChargingStation": "FAR-90001",
+      "Unit": "min",
+      "Value": 0.0046,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90002": [
+    {
+      "ChargingStation": "FAR-90002",
+      "Unit": "min",
+      "Value": 0.007,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90003": [
+    {
+      "ChargingStation": "FAR-90003",
+      "Unit": "min",
+      "Value": 0.0059,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90004": [
+    {
+      "ChargingStation": "FAR-90004",
+      "Unit": "min",
+      "Value": 0.0117,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90005": [
+    {
+      "ChargingStation": "FAR-90005",
+      "Unit": "min",
+      "Value": 0.0037,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90006": [
+    {
+      "ChargingStation": "FAR-90006",
+      "Unit": "min",
+      "Value": 0.009,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90007": [
+    {
+      "ChargingStation": "FAR-90007",
+      "Unit": "min",
+      "Value": 0.004,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "FAR-90008": [
+    {
+      "ChargingStation": "FAR-90008",
+      "Unit": "min",
+      "Value": 0.015,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ],
+  "MOBI-FAR-00001": [
+    {
+      "ChargingStation": "MOBI-FAR-00001",
+      "Unit": "min",
+      "Value": 0,
+      "MinLevelValue": 0,
+      "MaxLevelValue": "NA",
+      "StartHour": "NA",
+      "EndHour": "NA"
+    }
+  ]
+}
