@@ -122,18 +122,17 @@ export default {
     //   .then((res) => res.json())
     //   .then((data) => {
     //     // this.postos = data
-    //     data = data.filter((p) => p.id.includes('FAR'));
-
-    //     // this.postos = data.flatMap((p) => ({
-    //     //   ...p,
-    //     //   evses: _.uniqBy(
-    //     //     p.evses.map((e) => ({
-    //     //       ...e,
-    //     //       connectors: e.connectors[0],
-    //     //     })),
-    //     //     (e) => e.connectors.standard + e.connectors.max_electric_power
-    //     //   ),
-    //     // }));
+    //     data = data.filter((p) => p.id.includes('LLE'));
+    //     this.postos = data.flatMap((p) =>
+    //       p.evses.map((e) => ({
+    //         ...p,
+    //         evse_id: e.uid,
+    //         evses: {
+    //           ...e,
+    //           connectors: e.connectors[0],
+    //         },
+    //       }))
+    //     );
     //   });
 
     this.postos = Postos.flatMap((p) =>
@@ -147,9 +146,6 @@ export default {
       }))
     );
 
-    // this.tarifas = _.filter(Custos, (t) => t.MinLevelValue == 0);
-    this.tarifas = _.mapValues(Custos, (tarifa) => _.keyBy(_.filter(tarifa, { MinLevelValue: 0 }), 'Unit'));
-
     // Papa.parse('https://www.mobie.pt/documents/42032/106470/Tarifas', {
     //   download: true,
     //   header: true,
@@ -158,11 +154,13 @@ export default {
     //     // console.log(results);
     //     // this.tarifas = results.data;
     //     this.tarifas = _.chain(results.data)
-    //       .filter((p) => p?.ChargingStation?.includes('FAR'))
+    //       .filter((p) => p?.ChargingStation?.includes('LLE'))
     //       .groupBy('ChargingStation')
+    //       .mapValues((tarifa) => _.keyBy(_.filter(tarifa, { MinLevelValue: 0 }), 'Unit'))
     //       .value();
     //   },
     // });
+    this.tarifas = _.mapValues(Custos, (tarifa) => _.keyBy(_.filter(tarifa, { MinLevelValue: 0 }), 'Unit'));
   },
 };
 
