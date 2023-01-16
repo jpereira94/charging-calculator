@@ -1,13 +1,11 @@
 <template>
   <section class="section">
-    <div class="container">
-      <div class="columns mb-3">
-        <div class="column is-3">
-          <div class="field">
-            <label for="" class="label">Energia (kWh)</label>
-            <div class="control">
-              <input type="number" class="input" v-model="energia" />
-            </div>
+    <div class="columns mb-3">
+      <div class="column is-3">
+        <div class="field">
+          <label for="" class="label">Energia (kWh)</label>
+          <div class="control">
+            <input type="number" class="input" v-model="energia" />
           </div>
         </div>
       </div>
@@ -48,7 +46,7 @@
       </tbody>
     </table>
 
-    <pre>{{ tarifas }}</pre>
+    <!-- <pre>{{ tarifas }}</pre> -->
     <!-- <pre>{{ $data }}</pre> -->
   </section>
 </template>
@@ -76,6 +74,7 @@ export default {
       tarifas: [],
       car: {
         max_ac_power: 11000,
+        max_dc_power: 170000,
         connectors: ['IEC_62196_T2', 'IEC_62196_T2_COMBO'],
       },
     };
@@ -90,9 +89,12 @@ export default {
         .uniqBy((p) => p.id + p.evses.connectors.standard + p.evses.connectors.max_electric_power)
         .map((p) => {
           let max_charge_rate = p.evses.connectors.max_electric_power;
-          if (p.evses.connectors.power_type.includes('AC') && max_charge_rate > this.car.max_ac_power) {
-            max_charge_rate = this.car.max_ac_power;
+          if (p.evses.connectors.power_type.includes('AC')) {
+            max_charge_rate = _.clamp(max_charge_rate, this.car.max_ac_power);
+          } else {
+            max_charge_rate = _.clamp(max_charge_rate, this.car.max_dc_power);
           }
+
           const time_to_charge_minutes = ((this.energia * 1000) / max_charge_rate) * 60;
           const tarifas = this.tarifas[p.id];
 
@@ -163,6 +165,50 @@ export default {
     // });
   },
 };
+
+// {
+//       "id": "6070eb3f5671201ad1142bf9",
+//       "naming": {
+//         "make": "Tesla",
+//         "model": "Model 3",
+//         "version": "Standard Range Plus",
+//         "edition": null,
+//         "chargetrip_version": "Standard Range Plus (2021 - 2021)",
+//         "__typename": "VehicleListNaming"
+//       },
+//       "connectors": [
+//         {
+//           "standard": "IEC_62196_T2",
+//           "power": 11,
+//           "max_electric_power": 11,
+//           "time": 330,
+//           "speed": 64,
+//           "__typename": "VehicleConnector"
+//         },
+//         {
+//           "standard": "TESLA_S",
+//           "power": 105,
+//           "max_electric_power": 170,
+//           "time": 21,
+//           "speed": 700,
+//           "__typename": "VehicleConnector"
+//         },
+//         {
+//           "standard": "IEC_62196_T2_COMBO",
+//           "power": 105,
+//           "max_electric_power": 170,
+//           "time": 21,
+//           "speed": 700,
+//           "__typename": "VehicleConnector"
+//         }
+//       ],
+//       "battery": {
+//         "usable_kwh": 51,
+//         "full_kwh": 54,
+//         "__typename": "VehicleListBattery"
+//       },
+//       "__typename": "VehicleList"
+//     },
 </script>
 
 <style></style>
