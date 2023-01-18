@@ -6,7 +6,6 @@ import 'vue-select/dist/vue-select.css';
 import _ from 'lodash';
 
 import VueRouter from 'vue-router';
-
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
@@ -17,8 +16,8 @@ Vue.config.productionTip = false;
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/', component: () => import('./Dados.vue') },
-  { path: '/otimizador', component: () => import('./Otimizador.vue') },
+  { path: '/dados', component: () => import('./Dados.vue') },
+  { path: '/', component: () => import('./Otimizador.vue') },
 ];
 
 // 3. Create the router instance and pass the `routes` option
@@ -35,5 +34,7 @@ new Vue({
 
 Vue.filter('euro', function (value, precision = 4) {
   if (!value) return '';
-  return '€ ' + _.round(value, precision).toFixed(precision);
+
+  // return '€' + _.round(value, precision).toFixed(precision);
+  return _.round(value, precision).toFixed(precision);
 });
