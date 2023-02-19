@@ -3,7 +3,7 @@ export default {
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -31,8 +31,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,5 +50,17 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
+    extend(config, { isClient }) {
+      if (isClient) {
+        const webpack = require('webpack')
+        config.plugins.push(
+          new webpack.NormalModuleReplacementPlugin(
+            /element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/,
+            'element-ui/lib/locale/lang/en'
+          )
+        )
+      }
+    },
   },
+  serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }],
 }
