@@ -63,4 +63,7 @@ export default {
     },
   },
   serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }],
+  server: {
+    host: '0.0.0.0',
+  },
 }
