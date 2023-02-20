@@ -2,7 +2,7 @@
   <el-container>
     <el-main>
       <h1>EV Charging Simulator Portugal</h1>
-      <p>Só são listados os postos até 10km do utilizador</p>
+      <!-- <p>Só são listados os postos até 10km do utilizador</p> -->
 
       <!-- <el-table
         v-loading="$fetchState.pending"
@@ -36,7 +36,11 @@
             station.coordinates_latitude,
             station.coordinates_longitude,
           ]"
-        ></l-marker>
+        >
+          <l-popup>
+            <div>{{ station.id }}</div>
+          </l-popup>
+        </l-marker>
       </l-map>
 
       <!-- <pre>{{ tarifas }}</pre> -->
@@ -63,8 +67,8 @@ export default Vue.extend({
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 15,
-      center: [51.505, -0.159],
+      zoom: 12,
+      center: [37.07914, -7.91908],
       markerLatLng: [51.504, -0.159],
       // withPopup: latLng(47.41322, -1.219482),
       // withTooltip: latLng(47.41422, -1.250482),
@@ -191,6 +195,11 @@ export default Vue.extend({
     //     "We've laid the ground work for you. It's time for you to build something epic!",
     //   duration: 5000,
     // })
+  },
+  methods: {
+    updateCenter(center) {
+      console.log(center)
+    },
   },
 })
 </script>
