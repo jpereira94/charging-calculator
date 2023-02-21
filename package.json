@@ -20,10 +20,12 @@
     "leaflet": "^1.9.3",
     "nuxt": "^2.15.8",
     "papaparse": "^5.3.2",
+    "request": "^2.88.2",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
-    "vue2-leaflet": "^2.7.1"
+    "vue2-leaflet": "^2.7.1",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",

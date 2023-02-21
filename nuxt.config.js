@@ -66,7 +66,10 @@ export default {
       }
     },
   },
-  serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }],
+  serverMiddleware: [
+    { path: '/api/locations', handler: '~/api/locations.js' },
+    { path: '/api/tarifas', handler: '~/api/tarifas.js' },
+  ],
   server: {
     host: '0.0.0.0',
   },

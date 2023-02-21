@@ -38,6 +38,11 @@ export default async function (req, res) {
           })
         }
       }
+      locations = locations.filter(
+        (x, i, self) =>
+          i ===
+          self.findIndex((y) => x.id === y.id && x.standard === y.standard)
+      )
       locations = JSON.stringify(locations)
       await redis.set('locations', locations, 'EX', 5 * 60)
     } else {
