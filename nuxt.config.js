@@ -1,3 +1,5 @@
+import colors from 'vuetify/es5/util/colors'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -21,14 +23,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['element-ui/lib/theme-chalk/index.css', 'leaflet/dist/leaflet.css'],
+  css: ['leaflet/dist/leaflet.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/plugins/element-ui',
-    '@/plugins/utils.js',
-    { src: '~plugins/leaflet.js', ssr: false },
-  ],
+  plugins: ['@/plugins/utils.js', { src: '~plugins/leaflet.js', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,6 +35,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/vuetify
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,25 +52,39 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    transpile: [/^element-ui/],
-    extend(config, { isClient }) {
-      if (isClient) {
-        const webpack = require('webpack')
-        config.plugins.push(
-          new webpack.NormalModuleReplacementPlugin(
-            /element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/,
-            'element-ui/lib/locale/lang/en'
-          )
-        )
-      }
-    },
-  },
+  build: {},
+
   serverMiddleware: [
     { path: '/api/locations', handler: '~/api/locations.js' },
     { path: '/api/tarifas', handler: '~/api/tarifas.js' },
   ],
+
   server: {
     host: '0.0.0.0',
+    port: 8888,
+    watch: {
+      usePolling: true,
+    },
+  },
+
+  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    // treeShake: true,
+
+    theme: {
+      dark: false,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+        },
+      },
+    },
   },
 }

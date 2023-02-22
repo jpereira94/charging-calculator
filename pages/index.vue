@@ -1,88 +1,82 @@
 <template>
-  <el-container>
-    <el-main>
-      <h1>EV Charging Simulator Portugal</h1>
-      <!-- <p>Só são listados os postos até 10km do utilizador</p> -->
+  <v-container>
+    <h1>Calculador Tarifa OPC - Portugal</h1>
 
-      <el-checkbox-group v-model="standards">
-        <el-checkbox-button label="CHADEMO">
-          <!-- <img src="~/assets/CHADEMO.svg" /> -->
-        </el-checkbox-button>
-        <el-checkbox-button label="IEC_62196_T2">
-          <!-- <img src="~/assets/IEC_62196_T2.svg" /> -->
-        </el-checkbox-button>
-        <el-checkbox-button label="IEC_62196_T2_COMBO">
-          <!-- <img src="~/assets/IEC_62196_T2_COMBO.svg" /> -->
-        </el-checkbox-button>
-      </el-checkbox-group>
+    <v-btn-toggle v-model="standards" multiple>
+      <v-btn value="CHADEMO">
+        <img src="~/assets/CHADEMO.svg" alt="CHADEMO" />
+      </v-btn>
+      <v-btn value="IEC_62196_T2">
+        <img src="~/assets/IEC_62196_T2.svg" alt="IEC_62196_T2" />
+      </v-btn>
+      <v-btn value="IEC_62196_T2_COMBO">
+        <img src="~/assets/IEC_62196_T2_COMBO.svg" alt="IEC_62196_T2_COMBO" />
+      </v-btn>
+    </v-btn-toggle>
 
-      <p>Velocidade carregamento máxima (em kw)</p>
-      <el-row :gutter="10" style="margin-bottom: 15px">
-        <el-col v-if="standards.includes('CHADEMO')" :span="8">
-          <el-input
-            v-model="CHADEMO_charging_rate"
-            type="number"
-            placeholder="CHADEMO_charging_rate"
-          >
-            <span slot="prefix" class="el-input__icon">
-              <img src="~/assets/CHADEMO.svg" />
-            </span>
-          </el-input>
-        </el-col>
-        <el-col v-if="standards.includes('IEC_62196_T2')" :span="8">
-          <el-input
-            v-model="IEC_62196_T2_charging_rate"
-            type="number"
-            placeholder="IEC_62196_T2_charging_rate"
-          >
-            <span slot="prefix" class="el-input__icon">
-              <img src="~/assets/IEC_62196_T2.svg" /> </span
-          ></el-input>
-        </el-col>
-        <el-col v-if="standards.includes('IEC_62196_T2_COMBO')" :span="8">
-          <el-input
-            v-model="IEC_62196_T2_COMBO_charging_rate"
-            type="number"
-            placeholder="IEC_62196_T2_COMBO_charging_rate"
-          >
-            <span slot="prefix" class="el-input__icon">
-              <img src="~/assets/IEC_62196_T2_COMBO.svg" /> </span
-          ></el-input>
-        </el-col>
-      </el-row>
-
-      <el-input
-        v-model="chargeAmount"
-        placeholder="kWh a carregar"
-        type="number"
-      >
-      </el-input>
-      <pre>{{ tarifas }}</pre>
-
-      <el-table
-        v-loading="$fetchState.pending"
-        :data="displayData"
-        style="width: 100%"
-      >
-        <el-table-column
-          v-for="header in headers"
-          :key="header"
-          :prop="header"
-          :label="header"
-          sortable
+    <v-row class="mt-3">
+      <v-col v-if="standards.includes('CHADEMO')" sm="4">
+        <v-text-field
+          v-model="CHADEMO_charging_rate"
+          label="CHADEMO"
+          prepend-icon="mdi-ev-plug-chademo"
         >
-        </el-table-column>
-      </el-table>
+        </v-text-field>
+      </v-col>
+      <v-col v-if="standards.includes('IEC_62196_T2')" sm="4">
+        <v-text-field
+          v-model="IEC_62196_T2_charging_rate"
+          label="IEC_62196_T2"
+          prepend-icon="mdi-ev-plug-type2"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col v-if="standards.includes('IEC_62196_T2_COMBO')" sm="4">
+        <v-text-field
+          v-model="IEC_62196_T2_COMBO_charging_rate"
+          label="IEC_62196_T2_COMBO"
+          prepend-icon="mdi-ev-plug-ccs2"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="12">
+        <v-text-field
+          v-model="chargeAmount"
+          label="kWh a carregar"
+          type="number"
+          prepend-icon="mdi-lightning-bolt"
+        >
+          <div slot="append">kWh</div>
+        </v-text-field>
+      </v-col>
+    </v-row>
 
-      <el-pagination
-        layout="prev, pager, next"
-        :current-page.sync="page"
-        :total="closestStations.length"
-        :page-size="pageSize"
-      >
-      </el-pagination>
-    </el-main>
-  </el-container>
+    <p style="max-width: 70ch">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi nostrum
+      dolor quae labore molestias quidem adipisci voluptates, molestiae atque
+      minima et veniam aliquid inventore iure distinctio excepturi magni nihil
+      non!
+    </p>
+
+    <v-row v-if="!$fetchState.pending">
+      <v-col v-for="station in displayData" :key="station.uid" cols="4">
+        <v-card>
+          <v-card-title>
+            <v-icon class="mr-3">
+              {{ station.standard | standardToIcon }}
+            </v-icon>
+            <span>
+              {{ station.id }}
+            </span>
+          </v-card-title>
+
+          <v-card-text>
+            <pre>{{ station }}</pre>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -92,11 +86,23 @@ import { mapFields } from 'vuex-map-fields'
 
 export default Vue.extend({
   name: 'IndexPage',
+  filters: {
+    standardToIcon(value) {
+      switch (value) {
+        case 'CHADEMO':
+          return 'mdi-ev-plug-chademo'
+        case 'IEC_62196_T2':
+          return 'mdi-ev-plug-type2'
+        case 'IEC_62196_T2_COMBO':
+          return 'mdi-ev-plug-ccs2'
+      }
+    },
+  },
 
   data() {
     return {
       locations: [],
-      tarifas: {},
+      tarifas: [],
       page: 1,
       pageSize: 20,
       userLocation: {},
@@ -105,49 +111,49 @@ export default Vue.extend({
   },
   // eslint-disable-next-line require-await
   async fetch() {
-    const response = await this.$axios.$get('/api/locations')
-    this.locations = response
+    // const response = await this.$axios.$get('/api/locations')
+    // this.locations = response
 
-    const tarifas = await this.$axios.$get('/api/tarifas')
-    this.tarifas = tarifas
-
-    // const { data } = await this.$axios.get(
-    //   'https://ocpi.mobinteli.com/2.2/locations'
-    // )
-    // for (let i = 0; i < data.length; i++) {
-    //   const posto = data[i]
-    //   for (let j = 0; j < posto.evses.length; j++) {
-    //     const evse = posto.evses[j]
-    //     this.locations.push({
-    //       id: posto.id,
-    //       uid: evse.uid,
-    //       country_code: posto.country_code,
-    //       party_id: posto.party_id,
-    //       address: posto.address,
-    //       city: posto.city,
-    //       country: posto.country,
-    //       postal_code: posto.postal_code,
-    //       coordinates_latitude: posto.coordinates.latitude,
-    //       coordinates_longitude: posto.coordinates.longitude,
-    //       parking_type: posto.parking_type,
-    //       standard: evse.connectors[0].standard,
-    //       format: evse.connectors[0].format,
-    //       power_type: evse.connectors[0].power_type,
-    //       max_voltage: evse.connectors[0].max_voltage,
-    //       max_amperage: evse.connectors[0].max_amperage,
-    //       max_electric_power: evse.connectors[0].max_electric_power,
-    //       mobie_voltage_level: posto.mobie_voltage_level,
-    //     })
-    //   }
-    // }
-    // this.locations = this.locations.filter(
-    //   (x, i, self) =>
-    //     i === self.findIndex((y) => x.id === y.id && x.standard === y.standard)
-    // )
+    const { data } = await this.$axios.get(
+      'https://ocpi.mobinteli.com/2.2/locations'
+    )
+    for (let i = 0; i < data.length; i++) {
+      const posto = data[i]
+      for (let j = 0; j < posto.evses.length; j++) {
+        const evse = posto.evses[j]
+        this.locations.push({
+          id: posto.id,
+          uid: evse.uid,
+          country_code: posto.country_code,
+          party_id: posto.party_id,
+          address: posto.address,
+          city: posto.city,
+          country: posto.country,
+          postal_code: posto.postal_code,
+          coordinates_latitude: posto.coordinates.latitude,
+          coordinates_longitude: posto.coordinates.longitude,
+          parking_type: posto.parking_type,
+          standard: evse.connectors[0].standard,
+          format: evse.connectors[0].format,
+          power_type: evse.connectors[0].power_type,
+          max_voltage: evse.connectors[0].max_voltage,
+          max_amperage: evse.connectors[0].max_amperage,
+          max_electric_power: evse.connectors[0].max_electric_power,
+          mobie_voltage_level: posto.mobie_voltage_level,
+        })
+      }
+    }
+    this.locations = this.locations.filter(
+      (x, i, self) =>
+        i === self.findIndex((y) => x.id === y.id && x.standard === y.standard)
+    )
 
     // console.log(results)
 
-    if (this.tarifas.length === 0) {
+    // const tarifas = await this.$axios.$get('/api/tarifas')
+    // this.tarifas = tarifas
+
+    if (Object.keys(this.tarifas).length === 0) {
       const results = await new Promise((resolve, reject) => {
         Papa.parse('https://www.mobie.pt/documents/42032/106470/Tarifas', {
           download: true,
@@ -157,12 +163,15 @@ export default Vue.extend({
           error: reject,
         })
       })
-      this.tarifas = results.data.reduce((prev, curr) => {
-        ;(prev[curr.ChargingStation] || (prev[curr.ChargingStation] = [])).push(
-          curr
-        )
-        return prev
-      }, {})
+      // this.tarifas = results.data
+      this.tarifas = results.data
+        .filter((t) => t.StartHour === 'NA')
+        .reduce((prev, curr) => {
+          ;(
+            prev[curr.ChargingStation] || (prev[curr.ChargingStation] = [])
+          ).push(curr)
+          return prev
+        }, {})
     }
   },
   computed: {
@@ -176,15 +185,6 @@ export default Vue.extend({
       'IEC_62196_T2_charging_rate',
       'IEC_62196_T2_COMBO_charging_rate',
     ]),
-
-    // carStandards: {
-    //   get() {
-    //     return this.$store.state.standards
-    //   },
-    //   set(value) {
-    //     this.$store.commit('updateStandards', value)
-    //   },
-    // },
 
     displayData() {
       return this.closestStations.slice(
@@ -202,25 +202,50 @@ export default Vue.extend({
           .filter(
             (station) =>
               this.standards.includes(station.standard) &&
-              this.$measure(
-                station.coordinates_latitude,
-                station.coordinates_longitude,
-                this.userLocation.latitude,
-                this.userLocation.longitude
-              ) < 10000
+              ['ABT-00012', 'FAR-90007', 'FAR-00010'].includes(station.id)
+            // this.$measure(
+            //   station.coordinates_latitude,
+            //   station.coordinates_longitude,
+            //   this.userLocation.latitude,
+            //   this.userLocation.longitude
+            // ) < 10000
           )
           // .filter((station) => station.id.includes('FAR'))
           // .filter((x, i, self) => i === self.findIndex((y) => x.id === y.id))
           .map((station) => {
+            const tarifas = this.tarifas[station.id] || []
+
+            const chargeCost =
+              tarifas.find((t) => t.Unit === 'charge')?.Value || 0
+
             const maxChargeRate = Math.min(
               station.max_electric_power,
               parseFloat(this[station.standard + '_charging_rate']) * 1000
             )
+            const chargingTimeInMinutes = Math.round(
+              ((this.chargeAmount * 1000) / maxChargeRate) * 60
+            )
+            const timeFares = tarifas.filter((t) => t.Unit === 'min')
+            const timeCost = this.calculatePartitionCost(
+              chargingTimeInMinutes,
+              timeFares
+            )
+
+            const energyFares = tarifas.filter((t) => t.Unit === 'kWh')
+            const energyCost = this.calculatePartitionCost(
+              this.chargeAmount,
+              energyFares
+            )
+            const totalOPCCost = chargeCost + timeCost + energyCost
 
             return {
               ...station,
               maxChargeRate,
-              time2charge: (this.chargeAmount * 1000) / maxChargeRate,
+              chargingTimeInMinutes,
+              chargeCost,
+              timeCost,
+              energyCost,
+              totalOPCCost,
             }
           })
         // .sort((a, b) => {
@@ -232,14 +257,69 @@ export default Vue.extend({
         // })
       )
     },
+
+    tarifasTest() {
+      // return this.tarifas.filter((t) => t.StartHour !== 'NA')
+      // return this.tarifas.filter((t) => t.ChargingStation === 'ABT-00012')
+      return this.tarifas['FAR-90007']
+
+      //      {
+      //   "ChargingStation": "CBR-00065",
+      //   "Unit": "kWh",
+      //   "Value": 0.07,
+      //   "MinLevelValue": 0,
+      //   "MaxLevelValue": "NA",
+      //   "StartHour": 0,
+      //   "EndHour": 8
+      // },
+      // {
+      //   "ChargingStation": "CBR-00065",
+      //   "Unit": "min",
+      //   "Value": 0.025,
+      //   "MinLevelValue": 0,
+      //   "MaxLevelValue": "NA",
+      //   "StartHour": 8,
+      //   "EndHour": 0
+      // },
+
+      //     {
+      //   "ChargingStation": "ABT-00012",
+      //   "Unit": "charge",
+      //   "Value": 0.5,
+      //   "MinLevelValue": 0,
+      //   "MaxLevelValue": "NA",
+      //   "StartHour": "NA",
+      //   "EndHour": "NA"
+      // },
+      // {
+      //   "ChargingStation": "ABT-00012",
+      //   "Unit": "kWh",
+      //   "Value": 0.35,
+      //   "MinLevelValue": 0,
+      //   "MaxLevelValue": "NA",
+      //   "StartHour": "NA",
+      //   "EndHour": "NA"
+      // },
+      // {
+      //   "ChargingStation": "ABT-00012",
+      //   "Unit": "min",
+      //   "Value": 0,
+      //   "MinLevelValue": 0,
+      //   "MaxLevelValue": 30,
+      //   "StartHour": "NA",
+      //   "EndHour": "NA"
+      // },
+      // {
+      //   "ChargingStation": "ABT-00012",
+      //   "Unit": "min",
+      //   "Value": 0.18,
+      //   "MinLevelValue": 30,
+      //   "MaxLevelValue": "NA",
+      //   "StartHour": "NA",
+      //   "EndHour": "NA"
+      // }
+    },
   },
-  // methods: {
-  //   async getCount() {
-  //     const response = await fetch('http://localhost:3000/api/count')
-  //     const data = await response.json()
-  //     this.count = data.count
-  //   },
-  // },
   mounted() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -266,6 +346,28 @@ export default Vue.extend({
   methods: {
     updateCenter(center) {
       console.log(center)
+    },
+
+    calculatePartitionCost(amount, fares) {
+      let cost = 0
+
+      if (fares.length > 0) {
+        fares = fares.sort((a, b) => a.MinLevelValue - b.MinLevelValue)
+        let remainingTime = amount
+        let i = 0
+        while (remainingTime > 0) {
+          // get the amount of time in this interval, assume NA is infinity
+          const timeToSubtract =
+            fares[i].MaxLevelValue === 'NA' ? Infinity : fares[i].MaxLevelValue
+
+          cost = fares[i].Value * Math.min(timeToSubtract, remainingTime)
+
+          remainingTime -= timeToSubtract
+          i++
+        }
+      }
+
+      return cost
     },
   },
 })
@@ -302,7 +404,7 @@ export default Vue.extend({
 .el-input--prefix .el-input__inner {
   padding-left: 40px;
 }
-.el-input__suffix-inner {
+.el-input__suffix {
   display: inline-flex;
   align-items: center;
 }
