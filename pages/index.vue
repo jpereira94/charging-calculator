@@ -49,17 +49,28 @@
           <div slot="append">kWh</div>
         </v-text-field>
       </v-col>
+
+      <v-col cols="12">
+        <v-text-field v-model="local" label="Localidade"> </v-text-field>
+      </v-col>
     </v-row>
 
-    <p style="max-width: 70ch">
+    <!-- <p style="max-width: 70ch">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi nostrum
       dolor quae labore molestias quidem adipisci voluptates, molestiae atque
       minima et veniam aliquid inventore iure distinctio excepturi magni nihil
       non!
-    </p>
+    </p> -->
 
     <v-row v-if="!$fetchState.pending">
-      <v-col v-for="station in displayData" :key="station.uid" cols="4">
+      <v-col
+        v-for="station in displayData"
+        :key="station.uid"
+        cols="12"
+        sm="6"
+        lg="4"
+        xl="3"
+      >
         <v-card>
           <v-card-title>
             <v-icon class="mr-3">
@@ -71,7 +82,41 @@
           </v-card-title>
 
           <v-card-text>
-            <pre>{{ station }}</pre>
+            <v-row>
+              <v-col cols="6" class="text-center">
+                <div class="text-h4">
+                  {{ station.totalOPCCost | money }}
+                </div>
+                <div class="text-overline">Total</div>
+              </v-col>
+
+              <v-col cols="6" class="text-center">
+                <div class="text-h4">
+                  {{ station.chargingTimeInMinutes | toHumanTime }}
+                </div>
+                <div class="text-overline">Tempo</div>
+              </v-col>
+
+              <v-col cols="4" class="text-center">
+                <v-icon>mdi-connection</v-icon>
+                <div class="text-h5">{{ station.chargeCost | money }}</div>
+                <div class="text-overline">Ativação</div>
+              </v-col>
+
+              <v-col cols="4" class="text-center">
+                <v-icon>mdi-clock-outline</v-icon>
+                <div class="text-h5">{{ station.timeCost | money }}</div>
+                <div class="text-overline">Tempo</div>
+              </v-col>
+
+              <v-col cols="4" class="text-center">
+                <v-icon>mdi-lightning-bolt</v-icon>
+                <div class="text-h5">{{ station.energyCost | money }}</div>
+                <div class="text-overline">Energia</div>
+              </v-col>
+            </v-row>
+
+            <!-- <pre>{{ station }}</pre> -->
           </v-card-text>
         </v-card>
       </v-col>
@@ -83,6 +128,7 @@
 import Vue from 'vue'
 import Papa from 'papaparse'
 import { mapFields } from 'vuex-map-fields'
+import debounce from 'lodash.debounce'
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -97,6 +143,12 @@ export default Vue.extend({
           return 'mdi-ev-plug-ccs2'
       }
     },
+    money(value) {
+      return value.toFixed(2) + ' €'
+    },
+    toHumanTime(value) {
+      return Math.floor(value / 60) + ':' + String(value % 60).padStart(2, '0')
+    },
   },
 
   data() {
@@ -107,6 +159,8 @@ export default Vue.extend({
       pageSize: 20,
       userLocation: {},
       chargeAmount: 30,
+      local: '',
+      localDebounced: '',
     }
   },
   // eslint-disable-next-line require-await
@@ -174,6 +228,7 @@ export default Vue.extend({
         }, {})
     }
   },
+
   computed: {
     // The `mapFields` function takes an array of
     // field names and generates corresponding
@@ -202,7 +257,10 @@ export default Vue.extend({
           .filter(
             (station) =>
               this.standards.includes(station.standard) &&
-              ['ABT-00012', 'FAR-90007', 'FAR-00010'].includes(station.id)
+              station.id
+                .toLowerCase()
+                .includes(this.localDebounced.toLowerCase())
+            // ['ABT-00012', 'FAR-90007', 'FAR-00010'].includes(station.id)
             // this.$measure(
             //   station.coordinates_latitude,
             //   station.coordinates_longitude,
@@ -248,93 +306,99 @@ export default Vue.extend({
               totalOPCCost,
             }
           })
-        // .sort((a, b) => {
-        //   const distA = a.distance2user
-        //   const distB = b.distance2user
-        //   if (distA < distB) return -1
-        //   if (distA > distB) return 1
-        //   return 0
-        // })
+          .sort((a, b) => a.totalOPCCost - b.totalOPCCost)
       )
     },
 
-    tarifasTest() {
-      // return this.tarifas.filter((t) => t.StartHour !== 'NA')
-      // return this.tarifas.filter((t) => t.ChargingStation === 'ABT-00012')
-      return this.tarifas['FAR-90007']
+    // tarifasTest() {
+    //   // return this.tarifas.filter((t) => t.StartHour !== 'NA')
+    //   // return this.tarifas.filter((t) => t.ChargingStation === 'ABT-00012')
+    //   return this.tarifas['FAR-90007']
 
-      //      {
-      //   "ChargingStation": "CBR-00065",
-      //   "Unit": "kWh",
-      //   "Value": 0.07,
-      //   "MinLevelValue": 0,
-      //   "MaxLevelValue": "NA",
-      //   "StartHour": 0,
-      //   "EndHour": 8
-      // },
-      // {
-      //   "ChargingStation": "CBR-00065",
-      //   "Unit": "min",
-      //   "Value": 0.025,
-      //   "MinLevelValue": 0,
-      //   "MaxLevelValue": "NA",
-      //   "StartHour": 8,
-      //   "EndHour": 0
-      // },
+    // },
 
-      //     {
-      //   "ChargingStation": "ABT-00012",
-      //   "Unit": "charge",
-      //   "Value": 0.5,
-      //   "MinLevelValue": 0,
-      //   "MaxLevelValue": "NA",
-      //   "StartHour": "NA",
-      //   "EndHour": "NA"
-      // },
-      // {
-      //   "ChargingStation": "ABT-00012",
-      //   "Unit": "kWh",
-      //   "Value": 0.35,
-      //   "MinLevelValue": 0,
-      //   "MaxLevelValue": "NA",
-      //   "StartHour": "NA",
-      //   "EndHour": "NA"
-      // },
-      // {
-      //   "ChargingStation": "ABT-00012",
-      //   "Unit": "min",
-      //   "Value": 0,
-      //   "MinLevelValue": 0,
-      //   "MaxLevelValue": 30,
-      //   "StartHour": "NA",
-      //   "EndHour": "NA"
-      // },
-      // {
-      //   "ChargingStation": "ABT-00012",
-      //   "Unit": "min",
-      //   "Value": 0.18,
-      //   "MinLevelValue": 30,
-      //   "MaxLevelValue": "NA",
-      //   "StartHour": "NA",
-      //   "EndHour": "NA"
-      // }
+    //      {
+    //   "ChargingStation": "CBR-00065",
+    //   "Unit": "kWh",
+    //   "Value": 0.07,
+    //   "MinLevelValue": 0,
+    //   "MaxLevelValue": "NA",
+    //   "StartHour": 0,
+    //   "EndHour": 8
+    // },
+    // {
+    //   "ChargingStation": "CBR-00065",
+    //   "Unit": "min",
+    //   "Value": 0.025,
+    //   "MinLevelValue": 0,
+    //   "MaxLevelValue": "NA",
+    //   "StartHour": 8,
+    //   "EndHour": 0
+    // },
+
+    //     {
+    //   "ChargingStation": "ABT-00012",
+    //   "Unit": "charge",
+    //   "Value": 0.5,
+    //   "MinLevelValue": 0,
+    //   "MaxLevelValue": "NA",
+    //   "StartHour": "NA",
+    //   "EndHour": "NA"
+    // },
+    // {
+    //   "ChargingStation": "ABT-00012",
+    //   "Unit": "kWh",
+    //   "Value": 0.35,
+    //   "MinLevelValue": 0,
+    //   "MaxLevelValue": "NA",
+    //   "StartHour": "NA",
+    //   "EndHour": "NA"
+    // },
+    // {
+    //   "ChargingStation": "ABT-00012",
+    //   "Unit": "min",
+    //   "Value": 0,
+    //   "MinLevelValue": 0,
+    //   "MaxLevelValue": 30,
+    //   "StartHour": "NA",
+    //   "EndHour": "NA"
+    // },
+    // {
+    //   "ChargingStation": "ABT-00012",
+    //   "Unit": "min",
+    //   "Value": 0.18,
+    //   "MinLevelValue": 30,
+    //   "MaxLevelValue": "NA",
+    //   "StartHour": "NA",
+    //   "EndHour": "NA"
+    // }
+  },
+
+  watch: {
+    local(value) {
+      this.debouncedWatch(value)
     },
   },
+  created() {
+    this.debouncedWatch = debounce((value) => {
+      this.localDebounced = value
+    }, 500)
+  },
   mounted() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.$set(this.userLocation, 'latitude', position.coords.latitude)
-        this.$set(this.userLocation, 'longitude', position.coords.longitude)
-        this.center = this.markerLatLng = [
-          position.coords.latitude,
-          position.coords.longitude,
-        ]
-        console.log(this.userLocation)
-      },
-      (error) => {
-        console.error(error.message)
-      }
-    )
+    // navigator.geolocation.getCurrentPosition(
+    //   (position) => {
+    //     this.$set(this.userLocation, 'latitude', position.coords.latitude)
+    //     this.$set(this.userLocation, 'longitude', position.coords.longitude)
+    //     this.center = this.markerLatLng = [
+    //       position.coords.latitude,
+    //       position.coords.longitude,
+    //     ]
+    //     console.log(this.userLocation)
+    //   },
+    //   (error) => {
+    //     console.error(error.message)
+    //   }
+    // )
     // this.$notify({
     //   title: 'It works!',
     //   type: 'success',
